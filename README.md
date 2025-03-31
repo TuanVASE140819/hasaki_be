@@ -1,39 +1,56 @@
 # Hasaki Backend API
 
-Backend API sử dụng Node.js, Express, Firebase và Swagger.
+Backend API cho ứng dụng Hasaki E-commerce sử dụng Node.js, Express và Firebase.
 
 ## Cài đặt
 
-1. Clone repository:
-
 ```bash
-git clone https://github.com/TuanVASE140819/hasaki_be.git
+# Clone repository
+git clone https://github.com/your-username/hasaki_be.git
+
+# Di chuyển vào thư mục project
 cd hasaki_be
-```
 
-2. Cài đặt dependencies:
-
-```bash
+# Cài đặt dependencies
 npm install
+
+# Tạo file .env và cấu hình các biến môi trường
+cp .env.example .env
+
+# Khởi động server
+npm start
 ```
 
-3. Tạo file `.env` và cập nhật các biến môi trường:
+## Cấu hình môi trường
+
+Tạo file `.env` với các biến môi trường sau:
 
 ```env
 PORT=3000
-GOOGLE_APPLICATION_CREDENTIALS=path/to/your/serviceAccountKey.json
-FIREBASE_PROJECT_ID=hasaki-ebfd2
-```
+JWT_SECRET=your_jwt_secret_key
 
-4. Chạy server:
-
-```bash
-npm run dev
+# Firebase config
+FIREBASE_API_KEY=your_api_key
+FIREBASE_AUTH_DOMAIN=your_auth_domain
+FIREBASE_PROJECT_ID=your_project_id
+FIREBASE_STORAGE_BUCKET=your_storage_bucket
+FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+FIREBASE_APP_ID=your_app_id
+FIREBASE_MEASUREMENT_ID=your_measurement_id
 ```
 
 ## API Documentation
 
-Swagger UI có sẵn tại: `http://localhost:3000/api-docs`
+API documentation có sẵn tại `/api-docs` sau khi khởi động server.
+
+## Tính năng
+
+- [x] Xác thực người dùng (Đăng ký, Đăng nhập)
+- [x] Quản lý danh mục
+- [ ] Quản lý sản phẩm
+- [ ] Quản lý giỏ hàng
+- [ ] Quản lý đơn hàng
+- [ ] Đánh giá sản phẩm
 
 ## Các API Endpoints
 
