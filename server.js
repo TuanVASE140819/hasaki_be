@@ -4,6 +4,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const swaggerUi = require("swagger-ui-express");
 const swaggerDocs = require("./swagger"); // Updated path to use the new swagger structure
+const { db } = require("./config/firebaseConfig"); // Sửa lại cách import Firebase
 const categoryRoutes = require("./routes/categoryRoutes");
 const productRoutes = require("./routes/productRoutes");
 const brandRoutes = require("./routes/brandRoutes");
@@ -21,7 +22,6 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 // Test database connection
 app.get("/test-db", async (req, res) => {
   try {
-    const db = require("./config/firebaseConfig");
     const result = await db.collection("test").add({
       testField: true,
       timestamp: new Date(),
